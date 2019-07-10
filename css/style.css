@@ -1,0 +1,291 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+
+PROJECT:	Tanveed Junayed Portfolio
+VERSION:	1.0.0
+-------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-outline-light {
+  padding: 15px 30px;
+  background: #fff;
+  color: #8F979E;
+  border: 1px solid #DBE6EE;
+  font-weight: 300;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  border-color: #333B42;
+}
+
+body {
+  background: #F1F6FA;
+  color: #333B42;
+}
+
+.headroom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -150px;
+}
+
+@media (max-width: 991px) {
+  .headroom--unpinned {
+    top: 0;
+  }
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+.site-navigation {
+  padding: 10px 30px;
+  background: #F1F6FA;
+  z-index: 1000;
+}
+
+.site-navigation .nav-brand {
+  padding: 0;
+}
+
+.site-navigation .nav-item .nav-link {
+  font-size: 18px;
+  color: #333B42;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.site-navigation .nav-item:not(:last-child) .nav-link {
+  padding: 15px 30px;
+}
+
+.site-navigation .nav-item:not(:last-child) .nav-link:hover {
+  color: #366EFF;
+}
+
+.site-navigation .nav-item:last-child {
+  margin-left: 20px;
+}
+
+.site-navigation .nav-item:last-child .nav-link {
+  padding: 15px 30px;
+  background: #fff;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.site-navigation .nav-item:last-child .nav-link::before {
+  position: absolute;
+  content: '';
+  background: #366EFF;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.site-navigation .nav-item:last-child .nav-link:hover {
+  color: #fff;
+}
+
+.site-navigation .nav-item:last-child .nav-link:hover::before {
+  width: 100%;
+}
+
+.site-about {
+  padding: 300px 0 100px;
+}
+
+.site-about-content span, .site-about-content p {
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.site-about-content span {
+  color: #8F979E;
+}
+
+.site-about-content a {
+  color: #366EFF;
+  position: relative;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.site-about-content a::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #366EFF;
+  bottom: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: -1;
+}
+
+.site-about-content a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.site-about-content a:hover::before {
+  height: 100%;
+}
+
+.site-project-item {
+  background: #fff;
+  border-radius: 20px;
+  margin-bottom: 100px;
+  display: -webkit-box;
+  display: flex;
+  padding: 40px 40px 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.site-project-item:hover {
+  -webkit-transform: scale(1.002);
+          transform: scale(1.002);
+  box-shadow: 0 22px 34px 0 rgba(129, 143, 151, 0.13);
+}
+
+.site-project-item:hover .site-project-item-content .btn {
+  border-color: #333B42;
+}
+
+.site-project-item-content {
+  width: 60%;
+  padding-right: 60px;
+  margin-top: 10px;
+}
+
+.site-project-item-content span {
+  font-size: 16px;
+  display: block;
+  font-weight: 300;
+}
+
+.site-project-item-content h3 {
+  font-size: 30px;
+  color: #333B42;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.site-project-item-content p {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #8F979E;
+  line-height: 1.8;
+}
+
+.site-project-item-image {
+  width: 40%;
+}
+
+.site-project-item-image img {
+  display: block;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.site-project-item:nth-child(even) .site-project-item-content {
+  -webkit-box-ordinal-group: 3;
+          order: 2;
+  padding-right: 0;
+  padding-left: 60px;
+}
+
+.site-project-item:nth-child(even) .site-project-item-image {
+  -webkit-box-ordinal-group: 2;
+          order: 1;
+}
+
+.site-cta-content {
+  padding: 50px 0;
+  border-top: 1px dashed #8F979E;
+}
+
+.site-cta-content p {
+  font-size: 35px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
+
+.site-cta-content p a {
+  color: #366EFF;
+  position: relative;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.site-cta-content p a::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #366EFF;
+  bottom: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: -1;
+}
+
+.site-cta-content p a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.site-cta-content p a:hover::before {
+  height: 100%;
+}
+
+.site-cta-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-cta-social li {
+  display: inline-block;
+}
+
+.site-cta-social li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.site-cta-social li a {
+  color: #333B42;
+  font-size: 18px;
+  font-weight: 300;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.site-cta-social li a:hover {
+  text-decoration: none;
+  color: #366EFF;
+}
+
+/*# sourceMappingURL=maps/style.css.map */
