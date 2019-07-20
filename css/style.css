@@ -62,7 +62,7 @@ body {
 
 .site-navigation .nav-item .nav-link {
   font-size: 18px;
-  color: #333B42;
+  color: #132c47;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
@@ -89,16 +89,24 @@ body {
 }
 
 .site-navigation .nav-item:last-child .nav-link::before {
-  position: absolute;
   content: '';
-  background: #366EFF;
-  width: 0;
+  position: absolute;
+  width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
+  background: #366EFF;
   z-index: -1;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  top: 0;
+  left: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
 }
 
 .site-navigation .nav-item:last-child .nav-link:hover {
@@ -106,7 +114,10 @@ body {
 }
 
 .site-navigation .nav-item:last-child .nav-link:hover::before {
-  width: 100%;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .site-about {
@@ -179,16 +190,32 @@ body {
 }
 
 .site-project-item-content span {
-  font-size: 16px;
+  font-size: 13px;
   display: block;
   font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.site-project-item-content h3 {
+.site-project-item-content a.title {
   font-size: 30px;
   color: #333B42;
   margin-bottom: 20px;
   font-weight: 300;
+  display: inline-block;
+  position: relative;
+}
+
+.site-project-item-content a.title:hover {
+  text-decoration: none;
+  color: #366EFF;
+}
+
+.site-project-item-content a.title:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .site-project-item-content p {
@@ -219,6 +246,207 @@ body {
 .site-project-item:nth-child(even) .site-project-item-image {
   -webkit-box-ordinal-group: 2;
           order: 1;
+}
+
+.site-project-single-about {
+  margin-top: 250px;
+}
+
+.site-project-single-about h3 {
+  font-weight: 300;
+  font-size: 35px;
+  margin-bottom: 30px;
+  color: #132c47;
+}
+
+.site-project-single-about p {
+  width: 70%;
+  color: #8B99A1;
+  font-weight: 300;
+  line-height: 28px;
+  margin-bottom: 50px;
+}
+
+.site-project-single-meta {
+  display: -webkit-box;
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 80px;
+  width: 80%;
+}
+
+.site-project-single-meta li {
+  list-style: none;
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+
+.site-project-single-meta li span {
+  display: block;
+}
+
+.site-project-single-meta li span.title {
+  margin-bottom: 10px;
+  color: #132c47;
+}
+
+.site-project-single-meta li span.info {
+  font-weight: 300;
+  color: #8B99A1;
+}
+
+.site-project-single-meta li span.info a {
+  color: inherit;
+}
+
+.site-project-single-meta li span.info a:hover {
+  color: #366EFF;
+  text-decoration: none;
+}
+
+.site-project-single-images .one-col .image, .site-project-single-images .two-col .image {
+  margin-bottom: 50px;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.site-project-single-images .one-col .image img, .site-project-single-images .two-col .image img {
+  display: block;
+  width: 100%;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.site-project-single-images .one-col .image:hover, .site-project-single-images .two-col .image:hover {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.site-project-single-images .one-col .image:hover img, .site-project-single-images .two-col .image:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.site-project-single-images .two-col {
+  display: -webkit-box;
+  display: flex;
+}
+
+.site-project-single-images .two-col .image {
+  width: calc(50% - 25px);
+}
+
+.site-project-single-images .two-col .image:not(:last-child) {
+  margin-right: 50px;
+}
+
+.site-project-next {
+  background: #E1E3E9;
+  text-align: center;
+  padding: 200px 0;
+  position: relative;
+}
+
+.site-project-next::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #366EFF;
+  top: 0;
+  left: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+
+.site-project-next:hover p span, .site-project-next:hover p a {
+  color: #fff;
+}
+
+.site-project-next:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+.site-project-next p {
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  margin-bottom: 0;
+}
+
+.site-project-next p::before {
+  position: absolute;
+  content: 'Next Project';
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 100px;
+  color: #132c47;
+  left: 50%;
+  top: -110px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+.site-project-next p span {
+  display: block;
+  font-size: 40px;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.site-project-next p a {
+  font-size: 14px;
+  text-transform: lowercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.site-project-next p a::before {
+  content: '';
+  position: absolute;
+  width: 110%;
+  height: 1px;
+  background: #fff;
+  z-index: -1;
+  top: 60%;
+  left: -5%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.site-project-next p a:hover {
+  text-decoration: none;
+}
+
+.site-project-next p a:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .site-cta-content {
